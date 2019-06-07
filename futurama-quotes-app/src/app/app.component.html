@@ -6,16 +6,23 @@
 
 <div class="container">
     <ul>
-        <li *ngFor="let characterRow of characterRows">
+        <li *ngFor="let characterRow of characterRows; let i = index">
             <div class="row">
+                <div class="col">
+                    <h2 class="ordinal-number">
+                        {{ i+1 }}.
+                    </h2>
+                </div>
                 <div class="col">
                     <div class="img-wrapper">
                         <img src="{{characterRow.image}}" alt="{{characterRow.character}}">
                     </div>
                 </div>
                 <div class="col">
-                    <p class="character-name">{{ characterRow.character }}</p>
-                    <p class="character-quote">"{{ characterRow.quote }}"</p>
+                    <div class="character-info-wrapper">
+                        <p class="character-name">{{ characterRow.character }}</p>
+                        <p class="character-quote">"{{ characterRow.quote }}"</p>
+                    </div>
                 </div>
             </div>
         </li>
