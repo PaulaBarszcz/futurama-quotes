@@ -40,7 +40,7 @@ ul {
 .character-info-wrapper {
     padding-left: 5px;
 
-    .character-name {
+    .character-character {
         padding-right: 10px;
         color: #C62B3F;
         font-weight: 900;
@@ -48,7 +48,7 @@ ul {
 }
 
 @media (max-width: 600px) {
-    .character-name,
+    .character-character,
     .character-quote {
         text-align: center;
     }

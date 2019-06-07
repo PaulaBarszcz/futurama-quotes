@@ -1,5 +1,5 @@
 export class Quote {
-    picture: string;
-    name: string;
+    image: string;
+    character: string;
     quote: string;
 }
