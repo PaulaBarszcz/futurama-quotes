@@ -8,11 +8,15 @@
     <ul>
         <li *ngFor="let characterRow of characterRows">
             <div class="row">
-                <div class="img-wrapper">
-                    <img src="{{characterRow.image}}" alt="{{characterRow.character}}">
+                <div class="col">
+                    <div class="img-wrapper">
+                        <img src="{{characterRow.image}}" alt="{{characterRow.character}}">
+                    </div>
                 </div>
-                <span>{{ characterRow.character }}</span>
-                <span>{{ characterRow.quote }}</span>
+                <div class="col">
+                    <p class="character-name">{{ characterRow.character }}</p>
+                    <p class="character-quote">"{{ characterRow.quote }}"</p>
+                </div>
             </div>
         </li>
     </ul>

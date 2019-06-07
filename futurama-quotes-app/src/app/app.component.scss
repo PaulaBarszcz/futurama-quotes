@@ -1,17 +1,46 @@
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+}
+
 ul {
+    padding: 0;
     list-style-type: none;
 }
 
 .row {
     display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 30px;
     align-items: center;
+}
+
+.col {
+    padding-right: 10px;
 }
 
 .img-wrapper {
     display: flex;
+    max-height: 320px;
+    max-width: 100vmin;
 
     img {
-        max-height: 350px;
-        max-width: 350px;
+        width:320px;
+        object-fit: contain;
+    }
+}
+
+.character-name {
+    color: #C62B3F;
+    font-weight: 900;
+}
+
+@media (max-width: 500px) {
+    .character-name,
+    .character-quote {
+        text-align: center;
     }
 }
