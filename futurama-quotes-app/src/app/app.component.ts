@@ -2,6 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AppService } from './app.service';
 import { Quote } from './quote.model';
 import { Subscription } from 'rxjs';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalContentComponent } from './modal-content.component';
 
 @Component({
     selector: 'app-root',
@@ -15,7 +17,7 @@ export class AppComponent implements OnInit, OnDestroy {
     quotesObservable: Subscription;
     charactersToShow: Array<string> = [];
 
-    constructor(private appService: AppService) { }
+    constructor(private appService: AppService, private modalService: NgbModal) { }
 
     public ngOnInit(): void {
         this.subscribeToGetQuotes();
@@ -27,7 +29,13 @@ export class AppComponent implements OnInit, OnDestroy {
         }
     }
 
-    subscribeToGetQuotes(): void {
+    public showModal(characterRow): void {
+        const modalRef = this.modalService.open(ModalContentComponent);
+        modalRef.componentInstance.characterRow = characterRow;
+        console.log(characterRow);
+    }
+
+    private subscribeToGetQuotes(): void {
         const quotesObservable = this.appService.getQuotes();
         this.quotesObservable = quotesObservable
             .subscribe((characterRows: Quote[]) => {

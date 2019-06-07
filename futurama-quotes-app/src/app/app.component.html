@@ -6,7 +6,7 @@
 
 <div class="container">
     <ul>
-        <li *ngFor="let characterRow of characterRows; let i = index">
+        <li *ngFor="let characterRow of characterRows; let i = index" (click)="showModal(characterRow)">
             <div class="row">
                 <div class="col">
                     <h2 class="ordinal-number">
