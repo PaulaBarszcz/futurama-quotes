@@ -1,6 +1,19 @@
 <div>
-  <h1>
-    {{ title }}
-  </h1>
+    <h1>
+        {{ title }}
+    </h1>
 </div>
 
+<div class="container">
+    <ul>
+        <li *ngFor="let characterRow of characterRows">
+            <div class="row">
+                <div class="img-wrapper">
+                    <img src="{{characterRow.image}}" alt="{{characterRow.character}}">
+                </div>
+                <span>{{ characterRow.character }}</span>
+                <span>{{ characterRow.quote }}</span>
+            </div>
+        </li>
+    </ul>
+</div>

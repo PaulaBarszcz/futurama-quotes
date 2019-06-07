@@ -1,1 +1,17 @@
+ul {
+    list-style-type: none;
+}
 
+.row {
+    display: flex;
+    align-items: center;
+}
+
+.img-wrapper {
+    display: flex;
+
+    img {
+        max-height: 350px;
+        max-width: 350px;
+    }
+}
