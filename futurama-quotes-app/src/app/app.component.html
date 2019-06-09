@@ -8,19 +8,19 @@
     <ul>
         <li *ngFor="let characterRow of characterRows; let i = index" (click)="showModal(characterRow)">
             <div class="row">
-                <div class="col-sm-12 col-md-1">
-                    <h2 class="ordinal-number sm-text-left md-text-right">
+                <div class="col-1 col-md-1 p-0">
+                    <p class="h3 ordinal-number sm-text-left md-text-right pl-0">
                         {{ i+1 }}.
-                    </h2>
+                    </p>
                 </div>
-                <div class="col-sm-12 col-md-5">
+                <div class="col-11 col-md-5 p-0">
                     <div class="img-wrapper">
                         <img src="{{characterRow.image}}" alt="{{characterRow.character}}">
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-5">
-                    <div class="character-info-wrapper">
-                        <p class="character-character">{{ characterRow.character }}</p>
+                    <div class="character-info-wrapper p-1">
+                        <p class="character-character p-1">{{ characterRow.character }}</p>
                         <p class="character-quote">"{{ characterRow.quote }}"</p>
                     </div>
                 </div>
