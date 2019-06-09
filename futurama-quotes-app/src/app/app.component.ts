@@ -32,14 +32,17 @@ export class AppComponent implements OnInit, OnDestroy {
         const modalRef = this.modalService.open(ModalContentComponent,  {backdrop  : 'static', size: 'lg'});
         modalRef.componentInstance.characterName = characterRow.character;
     }
-
+s
     private subscribeToGetQuotes(): void {
         const quotesObservable = this.appService.getQuotes();
         this.quotesObservable = quotesObservable
             .subscribe((characterRows: Quote[]) => {
                 for (const [index, charRow] of characterRows.entries()) {
                     if (this.characterRows.length < 10) {
-                        if (this.characterRows.filter(e => e.character === charRow.character).length === 0) {
+                        // there is a bug in Futurama API - no quotes for character named URL are returned after call to address:
+                        // http://futuramaapi.herokuapp.com/api/characters/url - that's why I'm excluding it below
+                        if (this.characterRows.filter(e => e.character === charRow.character).length === 0
+                            && charRow.character !== 'URL') {
                             this.characterRows.push(charRow);
                         }
                     } else {
