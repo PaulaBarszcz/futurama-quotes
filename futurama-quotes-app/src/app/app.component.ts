@@ -13,9 +13,9 @@ import { ModalContentComponent } from './modal-content.component';
 
 export class AppComponent implements OnInit, OnDestroy {
     title = 'Futurama quotes';
-    characterRows: Array<object> = [];
+    characterRows: Array<Quote> = [];
     quotesObservable: Subscription;
-    charactersToShow: Array<string> = [];
+    // charactersToShow: Array<string> = [];
 
     constructor(private appService: AppService, private modalService: NgbModal) { }
 
@@ -39,10 +39,9 @@ export class AppComponent implements OnInit, OnDestroy {
         const quotesObservable = this.appService.getQuotes();
         this.quotesObservable = quotesObservable
             .subscribe((characterRows: Quote[]) => {
-                for (const charRow of characterRows) {
+                for (const [index, charRow] of characterRows.entries()) {
                     if (this.characterRows.length < 10) {
-                        if (!this.charactersToShow.includes(charRow.character)) {
-                            this.charactersToShow.push(charRow.character);
+                        if (this.characterRows.filter(e => e.character === charRow.character).length === 0) {
                             this.characterRows.push(charRow);
                         }
                     } else {
