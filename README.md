@@ -1,10 +1,21 @@
 # FuturamaQuotesApp
-
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.2.
+
+## Deployed on GitHub pages: https://paulabarszcz.github.io/futurama-quotes/ 
+
+using https://github.com/angular/angular-cli/wiki/stories-github-pages
+
+( ng build --prod --output-path docs --base-href futurama-quotes
+
+copy index.html and rename it to 404.html
+
+commit and push changes
+
+choose GitHub Pages source as master/docs )
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` or `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
