@@ -15,7 +15,6 @@ export class AppComponent implements OnInit, OnDestroy {
     title = 'Futurama quotes';
     characterRows: Array<Quote> = [];
     quotesObservable: Subscription;
-    // charactersToShow: Array<string> = [];
 
     constructor(private appService: AppService, private modalService: NgbModal) { }
 
@@ -30,9 +29,8 @@ export class AppComponent implements OnInit, OnDestroy {
     }
 
     public showModal(characterRow): void {
-        const modalRef = this.modalService.open(ModalContentComponent);
-        modalRef.componentInstance.characterRow = characterRow;
-        console.log(characterRow);
+        const modalRef = this.modalService.open(ModalContentComponent,  {backdrop  : 'static', size: 'lg'});
+        modalRef.componentInstance.characterName = characterRow.character;
     }
 
     private subscribeToGetQuotes(): void {
