@@ -10,6 +10,7 @@ body {
 
 body.modal-open {
     overflow-y: hidden;
+    overscroll-behavior: contain;
 }
 
 ul, ol {
