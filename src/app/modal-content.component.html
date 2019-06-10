@@ -1,10 +1,10 @@
-<div class="modal-header">
+<div *ngIf="characterQuotes.length > 0" class="modal-header">
     <h4 class="modal-title" id="modal-basic-title">{{ characterName }}</h4>
     <button type="button" class="close" (click)="activeModal.dismiss()">
         <span aria-hidden="true">&times;</span>
     </button>
 </div>
-<div class="modal-body">
+<div class="modal-body" *ngIf="characterQuotes.length > 0">
     <ul>
         <p *ngIf="shouldLengthErrorBeVisible" class="p-3 alert-danger">
             Sorry, instead of 5 quotes,
